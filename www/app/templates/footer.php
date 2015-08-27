@@ -1,6 +1,7 @@
 	
 		<footer>
-			<p>Copyright &copy; <?= date('Y') ?></p>
+			<p>Copyright &copy; Your Name <?= date('Y') ?></p>
+			<a href="index.php?clearcart">Clear Cart</a>
 		</footer>
 	</body>
 </html>
