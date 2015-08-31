@@ -19,8 +19,8 @@ $pxpay = new PxPay_Curl('https://sec.paymentexpress.com/pxpay/pxaccess.aspx', $P
 $response = $pxpay->getResponse($result);
 
 // FOR TESTING
-// echo '<pre>';
-// print_r($response);
+echo '<pre>';
+print_r($response);
 
 // Connect to the database
 $dbc = new mysqli('localhost', 'root', '', 'payment_gateway');
@@ -69,6 +69,8 @@ if( $response->getSuccess() ) {
 
 	}
 
+	// Clear the cart
+	$_SESSION['cart'] = [];
 
 } else {
 

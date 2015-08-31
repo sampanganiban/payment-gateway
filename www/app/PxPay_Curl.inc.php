@@ -173,7 +173,7 @@ class PxPay_Curl
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 		
 		#set up proxy, this may change depending on ISP, please contact your ISP to get the correct cURL settings
-		if(ENVIRONMENT == 'local') {
+		if(ENVIRONMENT == 'yoobee') {
 			curl_setopt($ch,CURLOPT_PROXY , "proxy:3128");
 			curl_setopt($ch,CURLOPT_PROXYUSERPWD, YOOBEE_USERNAME.':'.YOOBEE_PASSWORD);
 		}
