@@ -173,9 +173,11 @@ class PxPay_Curl
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 		
 		#set up proxy, this may change depending on ISP, please contact your ISP to get the correct cURL settings
-		curl_setopt($ch,CURLOPT_PROXY , "proxy:3128");
-		curl_setopt($ch,CURLOPT_PROXYUSERPWD, YOOBEE_USERNAME.':'.YOOBEE_PASSWORD);
-
+		if(ENVIRONMENT == 'local') {
+			curl_setopt($ch,CURLOPT_PROXY , "proxy:3128");
+			curl_setopt($ch,CURLOPT_PROXYUSERPWD, YOOBEE_USERNAME.':'.YOOBEE_PASSWORD);
+		}
+		
 		$outputXml = curl_exec ($ch); 		
 			
 		curl_close ($ch);
